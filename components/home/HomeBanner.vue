@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center">
-    <div class="relative w-full px-20 mx-auto">
+    <div class="relative w-full mx-auto">
       <div class="overflow-hidden relative h-64 ">
         <div v-for="(slide, index) in slides" :key="index" :class="{ 'opacity-100': currentSlide === index, 'opacity-0': currentSlide !== index }" class="absolute inset-0 transition-opacity duration-500 ease-in-out">
           <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover rounded-md" />
