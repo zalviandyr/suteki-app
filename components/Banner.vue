@@ -3,8 +3,10 @@
   <p>Home Banner</p>
 </template>
 
-<script>
-export default {
-  name: 'HomeBanner',
-}
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'HomeBanner'
+})
 </script>
