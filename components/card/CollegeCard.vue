@@ -1,8 +1,8 @@
 <template>
-  <div class="relative pb-20">
-    <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="college-card" class="object-cover rounded-lg h-52">
+  <div class="grid grid-cols-1 grid-rows-1">
+    <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="college-card" class="object-cover rounded-lg h-52 col-start-1 row-start-1">
 
-    <div class="flex flex-col absolute top-2 left-2 right-2 gap-1">
+    <div class="flex flex-col right-2 gap-1 col-start-1 row-start-1 py-3 px-2">
       <div class="bg-[#5471ED] rounded-full pl-4 pr-1 py-[1px] text-xs text-white flex flex-row items-center gap-2 w-fit">
         <span class="flex-grow">Kampus Partner</span>
         <div class="bg-[#3A5AE3] rounded-full w-5 h-5 flex items-center justify-center">
@@ -44,8 +44,6 @@
         </button>
       </div>
     </div>
-
-
   </div>
 </template>
 
