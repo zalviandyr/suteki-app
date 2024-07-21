@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center gap-3">
-    <span class="text-3xl font-bold">Rekomendasi Kampus</span>
+    <span class="text-3xl font-bold">Rekomendasi Jurusan/Prodi</span>
     <span class="text-sm text-[#848B9D]">Memberikan sistim pelayanan untuk para calon mahasiswa Jawa Barat dan Banten</span>
 
     <div class="grid grid-cols-4 gap-10 mt-2">
@@ -11,7 +11,7 @@
 
     <div class="flex flex-row w-full items-center justify-center gap-10 mt-5">
       <div class="h-[1px] w-full bg-[#E6E9ED]" />
-      <outline-button label="Kampus Lainnya (+32)" class="w-[30rem]" />
+      <outline-button label="Jurusan Lainnya (+32)" class="w-[30rem]" />
       <div class="h-[1px] w-full bg-[#E6E9ED]" />
     </div>
   </div>

@@ -19,6 +19,12 @@
 
           <home-colleges-recommendation class="col-span-2 row-start-1 col-start-1 mx-20" />
         </div>
+
+        <div class="grid grid-cols-2 grid-rows-1">
+          <img src="~/assets/img/grid.png" alt="grid" class="col-start-1 row-start-1">
+
+          <home-departments-recommendation class="col-span-2 row-start-1 col-start-1 mx-20" />
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +35,7 @@ import Vue from 'vue'
 import HomeAboutUs from '~/components/home/HomeAboutUs.vue';
 import HomeBanner from '~/components/home/HomeBanner.vue';
 import HomeCollegesRecommendation from '~/components/home/HomeCollegesRecommendation.vue';
+import HomeDepartmentsRecommendation from '~/components/home/HomeDepartmentsRecommendation.vue';
 import HomeHeader from '~/components/home/HomeHeader.vue';
 import HomeStep from '~/components/home/HomeStep.vue';
 
@@ -39,7 +46,8 @@ export default Vue.extend({
     HomeBanner,
     HomeStep,
     HomeAboutUs,
-    HomeCollegesRecommendation
+    HomeCollegesRecommendation,
+    HomeDepartmentsRecommendation
   }
 })
 </script>
