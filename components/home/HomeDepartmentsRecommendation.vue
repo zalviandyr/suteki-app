@@ -4,8 +4,8 @@
     <span class="text-sm text-[#848B9D]">Memberikan sistim pelayanan untuk para calon mahasiswa Jawa Barat dan Banten</span>
 
     <div class="grid grid-cols-4 gap-10 mt-2">
-      <div v-for="(college, index) in colleges" :key="index">
-        <college-card :name="college" />
+      <div v-for="(department, index) in departments" :key="index">
+        <department-card :title="department.title" :description="department.description" />
       </div>
     </div>
 
@@ -21,17 +21,29 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import OutlineButton from '~/components/button/OutlineButton.vue';
-import CollegeCard from '~/components/card/CollegeCard.vue';
+import DepartmentCard from '~/components/card/DepartmentCard.vue';
 
 export default defineComponent({
-  components: { CollegeCard, OutlineButton },
+  components: { DepartmentCard, OutlineButton },
   data() {
     return {
-      colleges: [
-        'Politeknik Negeri Padang',
-        'Universitas Andalas',
-        'Politeknik Negeri Padang',
-        'Universitas Andalas',
+      departments: [
+        {
+          title: 'Seni, Desain & Musik',
+          description: 'Desain Komunikasi Visual',
+        },
+        {
+          title: 'Pariwisata',
+          description: 'Perhotelan',
+        },
+        {
+          title: 'Teknik Komputer & Informatika',
+          description: 'Teknik Informatika',
+        },
+        {
+          title: 'Matematika & IPA',
+          description: 'Matematika',
+        },
       ]
     };
   }
