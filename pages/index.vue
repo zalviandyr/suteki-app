@@ -1,20 +1,20 @@
 <template>
   <div>
     <home-header />
-    <banner class="mt-5" />
+    <home-banner class="mt-5" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Banner from '~/components/Banner.vue';
-import Header from '~/components/Header.vue';
+import HomeBanner from '~/components/home/HomeBanner.vue';
+import HomeHeader from '~/components/home/HomeHeader.vue';
 
 export default Vue.extend({
   name: 'IndexPage',
   components: {
-    'home-header': Header,
-    Banner
+    HomeHeader,
+    HomeBanner,
   }
 })
 </script>

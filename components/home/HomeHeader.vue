@@ -27,11 +27,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import FilledButton from './button/FilledButton.vue';
-import OutlineButton from './button/OutlineButton.vue';
+import FilledButton from '~/components/button/FilledButton.vue';
+import OutlineButton from '~/components/button/OutlineButton.vue';
 
 export default defineComponent({
-  name: 'HomeHeader',
   components: {
     OutlineButton,
     FilledButton
