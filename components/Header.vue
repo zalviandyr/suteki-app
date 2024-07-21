@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-around bg-white p-4 shadow-md">
+  <div class="flex items-center justify-around bg-white p-3 shadow-sm">
     <!-- Logo Section -->
     <div class="flex items-center">
       <img src="~/assets/img/logo.png" alt="Logo" class="h-7" />
