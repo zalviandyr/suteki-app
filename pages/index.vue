@@ -1,36 +1,36 @@
 <template>
-  <div>
+  <div class="md:pb-0 pb-5">
     <home-header />
 
     <div class="md:px-12 px-0">
       <home-banner class="mt-6 md:mx-20 mx-5" />
 
-      <div class="flex flex-col gap-28 mt-10">
+      <div class="flex flex-col md:gap-28 gap-5 mt-10">
         <home-step class="md:mx-20 mx-5" />
 
         <div class="grid grid-cols-2 grid-rows-1">
-          <img src="~/assets/img/grid.png" alt="grid" class="col-start-2 row-start-1 self-start place-self-end">
+          <img src="~/assets/img/grid.png" alt="grid" class="col-start-2 row-start-1 self-start place-self-end md:inline hidden">
 
-          <home-about-us class="col-span-2 row-start-1 col-start-1 pt-20 mx-20" />
+          <home-about-us class="col-span-2 row-start-1 col-start-1 pt-20 md:mx-20 mx-5" />
         </div>
 
         <div class="grid grid-cols-2 grid-rows-1">
-          <img src="~/assets/img/grid.png" alt="grid" class="col-start-1 row-start-1">
+          <img src="~/assets/img/grid.png" alt="grid" class="col-start-1 row-start-1 md:inline hidden">
 
-          <home-colleges-recommendation class="col-span-2 row-start-1 col-start-1 mx-20" />
+          <home-colleges-recommendation class="col-span-2 row-start-1 col-start-1 md:mx-20 mx-5" />
         </div>
 
         <div class="grid grid-cols-2 grid-rows-1">
-          <img src="~/assets/img/grid.png" alt="grid" class="col-start-1 row-start-1">
+          <img src="~/assets/img/grid.png" alt="grid" class="col-start-1 row-start-1 md:inline hidden">
 
-          <home-departments-recommendation class="col-span-2 row-start-1 col-start-1 mx-20" />
+          <home-departments-recommendation class="col-span-2 row-start-1 col-start-1 md:mx-20 mx-5" />
         </div>
 
-        <home-contact class="mx-20" />
+        <home-contact class="md:inline hidden mx-20" />
       </div>
     </div>
 
-    <home-footer class="mt-10 mx-32" />
+    <home-footer class="mt-10 md:mx-32 mx-0" />
   </div>
 </template>
 

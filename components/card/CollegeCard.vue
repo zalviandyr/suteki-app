@@ -19,7 +19,7 @@
         <img src="~/assets/img/pnp.png" alt="college-icon" class="w-8 h-8 object-contain">
       </div>
 
-      <div class="bg-white mt-5 w-full shadow-md rounded p-3 flex flex-col gap-2">
+      <div class="bg-white mt-5 w-full shadow-md rounded p-3 flex flex-col gap-2 min-h-44">
         <span class="font-semibold text-sm">
           {{ name }}
         </span>
@@ -39,7 +39,8 @@
           <span class="text-sm font-semibold">Rp 350.000</span>
         </div>
 
-        <button type="button" class="bg-primary text-xs rounded-full text-white w-fit px-4">
+        <button type="button" class="bg-primary text-xs rounded-full text-white w-fit px-4 py-2 flex flex-row items-center gap-2">
+          <img src="~/assets/icon/globe.svg" alt="globe" />
           Pendaftaran Online
         </button>
       </div>

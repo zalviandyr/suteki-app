@@ -1,13 +1,13 @@
 <template>
-  <div class="flex flex-row gap-10">
+  <div class="flex md:flex-row flex-col gap-10">
     <div class="flex flex-col gap-2 flex-grow">
-      <span class="text-black text-3xl font-bold">{{ title }}</span>
+      <span class="text-black md:text-3xl text-2xl font-bold">{{ title }}</span>
       <span>{{ description }}</span>
     </div>
 
-    <div class="grid grid-cols-2 w-[140rem] gap-5">
+    <div class="grid grid-cols-2 md:w-[140rem] w-fit gap-5">
       <button v-for="action in actions" :key="action" class="inline-block text-sm px-4 py-4 rounded-md w-full" :class='`bg-${action.bgColor}`'>
-        <div class="flex flex-row items-center gap-3">
+        <div class="flex md:flex-row items-center gap-3">
           <div :class='`bg-${action.iconColor}`' class="p-2 rounded-md">
             <img src="~/assets/icon/about-us.png" alt="icon" />
           </div>
