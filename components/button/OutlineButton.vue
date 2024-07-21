@@ -6,7 +6,6 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'OutlineButton',
   props: {
     label: {
       type: String,
