@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-10">
+  <div>
     <home-header />
 
     <div class="px-12">
@@ -25,8 +25,12 @@
 
           <home-departments-recommendation class="col-span-2 row-start-1 col-start-1 mx-20" />
         </div>
+
+        <home-contact class="mx-20" />
       </div>
     </div>
+
+    <home-footer class="mt-10 mx-32" />
   </div>
 </template>
 
@@ -36,6 +40,7 @@ import HomeAboutUs from '~/components/home/HomeAboutUs.vue';
 import HomeBanner from '~/components/home/HomeBanner.vue';
 import HomeCollegesRecommendation from '~/components/home/HomeCollegesRecommendation.vue';
 import HomeDepartmentsRecommendation from '~/components/home/HomeDepartmentsRecommendation.vue';
+import HomeFooter from '~/components/home/HomeFooter.vue';
 import HomeHeader from '~/components/home/HomeHeader.vue';
 import HomeStep from '~/components/home/HomeStep.vue';
 
@@ -47,7 +52,8 @@ export default Vue.extend({
     HomeStep,
     HomeAboutUs,
     HomeCollegesRecommendation,
-    HomeDepartmentsRecommendation
+    HomeDepartmentsRecommendation,
+    HomeFooter
   }
 })
 </script>

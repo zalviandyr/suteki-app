@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-gradient-to-br from-[#126ABB] to-[#0AB6C1] py-10 rounded-md">
-    <div class="flex flex-row divide-x-[1px] divide-white divide-opacity-10">
+  <gradient-card>
+    <div class="flex flex-row divide-x-[1px] divide-white divide-opacity-10 py-10">
       <div v-for="(step, index) in steps" :key="index" class="flex flex-row gap-4 pl-10">
         <span class="rounded-full bg-[#3BD7F0] w-7 h-7 text-sm flex items-center justify-center text-white">
           {{ index + 1 }}
@@ -13,13 +13,15 @@
         </div>
       </div>
     </div>
-  </div>
+  </gradient-card>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import GradientCard from '~/components/card/GradientCard.vue'
 
 export default defineComponent({
+  components: { GradientCard },
   data: function () {
     return {
       steps: [
