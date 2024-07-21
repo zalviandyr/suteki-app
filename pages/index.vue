@@ -1,7 +1,7 @@
 <template>
   <div>
     <home-header />
-    <banner />
+    <banner class="mt-5" />
   </div>
 </template>
 
