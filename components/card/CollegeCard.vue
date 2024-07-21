@@ -38,6 +38,10 @@
           <span class="text-xs text-[#7E8CA0]">Uang masuk mulai dari</span>
           <span class="text-sm font-semibold">Rp 350.000</span>
         </div>
+
+        <button type="button" class="bg-primary text-xs rounded-full text-white w-fit px-4">
+          Pendaftaran Online
+        </button>
       </div>
     </div>
 
