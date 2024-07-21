@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import Vue, { defineComponent } from 'vue'
 
 export default defineComponent({
   data() {
@@ -28,10 +28,15 @@ export default defineComponent({
       currentSlide: 0,
     };
   },
+  mounted() {
+    Vue.axios
+      .get('open/banner/all?position=home-banner')
+      .finally(() => {
+        setInterval(() => this.nextSlide(), 3000);
+      })
+
+  },
   methods: {
-    prevSlide() {
-      this.currentSlide = (this.currentSlide + this.slides.length - 1) % this.slides.length;
-    },
     nextSlide() {
       this.currentSlide = (this.currentSlide + 1) % this.slides.length;
     },

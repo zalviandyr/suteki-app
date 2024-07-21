@@ -35,7 +35,9 @@
 </template>
 
 <script lang="ts">
+import axios from 'axios';
 import Vue from 'vue'
+import VueAxios from 'vue-axios';
 import HomeAboutUs from '~/components/home/HomeAboutUs.vue';
 import HomeBanner from '~/components/home/HomeBanner.vue';
 import HomeCollegesRecommendation from '~/components/home/HomeCollegesRecommendation.vue';
@@ -43,6 +45,15 @@ import HomeDepartmentsRecommendation from '~/components/home/HomeDepartmentsReco
 import HomeFooter from '~/components/home/HomeFooter.vue';
 import HomeHeader from '~/components/home/HomeHeader.vue';
 import HomeStep from '~/components/home/HomeStep.vue';
+
+const axiosInstance = axios.create({
+  baseURL: 'https://apicampusdir.civitas.id',
+  headers: {
+    'Api-Key': '4Qe7h5NcgCu1EPDzCKIO'
+  }
+})
+
+Vue.use(VueAxios, axiosInstance)
 
 export default Vue.extend({
   name: 'IndexPage',

@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'suteki-app',
+    title: 'Suteki App',
     htmlAttrs: {
       lang: 'en',
     },
