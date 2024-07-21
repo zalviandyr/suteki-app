@@ -2,11 +2,11 @@
   <div>
     <home-header />
 
-    <div class="px-12">
-      <home-banner class="mt-6 mx-20" />
+    <div class="md:px-12 px-0">
+      <home-banner class="mt-6 md:mx-20 mx-5" />
 
       <div class="flex flex-col gap-28 mt-10">
-        <home-step class="mx-20" />
+        <home-step class="md:mx-20 mx-5" />
 
         <div class="grid grid-cols-2 grid-rows-1">
           <img src="~/assets/img/grid.png" alt="grid" class="col-start-2 row-start-1 self-start place-self-end">
