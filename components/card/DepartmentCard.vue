@@ -1,25 +1,22 @@
 <template>
-  <div class="flex flex-col p-4 gap-2 rounded" :class="`bg-${getRandomBackgroundColor()}`">
+  <div class="flex flex-col gap-2 p-4 rounded min-h-28" :class="`bg-${getRandomBackgroundColor()}`">
     <div class="flex flex-row items-center gap-2">
       <div class="w-2 h-2" :class="`bg-${getRandomTextColor()}`" />
-      <span class="text-xs text-[#3C3B52]">{{ title }}</span>
+      <span class="text-xs text-[#3C3B52]">{{ program.major }}</span>
     </div>
 
-    <span class="font-semibold">{{ description }}</span>
+    <span class="font-semibold">{{ program.name }}</span>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
+import { IProgram } from '~/components/home/HomeDepartmentsRecommendation.vue';
 
 export default defineComponent({
   props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
+    program: {
+      type: Object as PropType<IProgram>,
       required: true,
     },
   },
