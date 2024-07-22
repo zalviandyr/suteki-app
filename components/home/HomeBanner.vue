@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col items-center">
     <div class="relative w-full mx-auto">
-      <div class="overflow-hidden relative h-64 ">
+      <div class="relative h-64 overflow-hidden ">
         <div v-for="(slide, index) in slides" :key="index" :class="{ 'opacity-100': currentSlide === index, 'opacity-0': currentSlide !== index }" class="absolute inset-0 transition-opacity duration-500 ease-in-out">
-          <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover rounded-md" />
+          <img :src="slide.image" :alt="slide.alt" class="object-cover w-full h-full rounded-md" />
         </div>
       </div>
 
@@ -16,24 +16,32 @@
 </template>
 
 <script lang="ts">
-import Vue, { defineComponent } from 'vue'
+import { defineComponent } from 'vue'
+
+type ISlide = {
+  image: string,
+  alt: string
+}
 
 export default defineComponent({
   data() {
+    const slides: ISlide[] = []
+
     return {
-      slides: [
-        { image: 'https://apicampusdir.civitas.id/images/banners/605c2c5b83a1a9994d6ee72c.jpg', alt: 'Slide 1' },
-        { image: 'https://apicampusdir.civitas.id/images/banners/606eddac34473c0cc643103d', alt: 'Slide 2' },
-      ],
+      slides,
       currentSlide: 0,
     };
   },
+  async fetch() {
+    const response = await this.$axios.$get('/open/banner/all?position=home-banner')
+
+    this.slides = response.data.map((item: any, index: number) => ({
+      image: this.$axios.defaults.baseURL + item.image,
+      alt: `banner-${index}`,
+    }));
+  },
   mounted() {
-    Vue.axios
-      .get('open/banner/all?position=home-banner')
-      .finally(() => {
-        setInterval(() => this.nextSlide(), 3000);
-      })
+    setInterval(() => this.nextSlide(), 3000);
 
   },
   methods: {
