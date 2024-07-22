@@ -1,32 +1,37 @@
 <template>
   <div class="grid grid-cols-1 grid-rows-1">
-    <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="college-card" class="object-cover rounded-lg h-52 col-start-1 row-start-1">
+    <img :src="college.thumbnail" alt="college-card" class="object-cover col-start-1 row-start-1 rounded-lg w-72 h-52">
 
-    <div class="flex flex-col right-2 gap-1 col-start-1 row-start-1 py-3 px-2">
-      <div class="bg-[#5471ED] rounded-full pl-4 pr-1 py-[1px] text-xs text-white flex flex-row items-center gap-2 w-fit">
-        <span class="flex-grow">Kampus Partner</span>
-        <div class="bg-[#3A5AE3] rounded-full w-5 h-5 flex items-center justify-center">
-          <img src="~/assets/icon/checklist.svg" alt="checklist">
+    <div class="flex flex-col col-start-1 row-start-1 gap-1 px-2 py-3 right-2">
+      <div class="flex flex-col gap-1 min-h-20">
+        <div v-if="college.is_has_scholarship" class="bg-[#5471ED] rounded-full pl-4 pr-1 py-[1px] text-xs text-white flex flex-row items-center gap-2 w-fit">
+          <span class="flex-grow">Beasiswa</span>
+          <div class="bg-[#3A5AE3] rounded-full w-5 h-5 flex items-center justify-center">
+            <img src="~/assets/icon/checklist.svg" alt="checklist">
+          </div>
+        </div>
+
+        <div class="bg-[#E83158] rounded-full pl-4 pr-1 py-[1px] text-xs text-white flex flex-row items-center gap-2 w-fit">
+          <span class="flex-grow">Terakreditasi</span>
+          <span class="bg-[#F35577] rounded-full w-5 h-5 flex items-center justify-center">
+            {{ college.study_program_accreditations }}
+          </span>
         </div>
       </div>
 
-      <div class="bg-[#E83158] rounded-full pl-4 pr-1 py-[1px] text-xs text-white flex flex-row items-center gap-2 w-fit">
-        <span class="flex-grow">Terakreditasi</span>
-        <span class="bg-[#F35577] rounded-full w-5 h-5 flex items-center justify-center">A</span>
+      <div class="p-2 bg-white rounded w-fit">
+        <img :src="college.logo" alt="college-icon" class="object-contain w-8 h-8">
       </div>
 
-      <div class="p-2 bg-white rounded w-fit mt-7">
-        <img src="~/assets/img/pnp.png" alt="college-icon" class="w-8 h-8 object-contain">
-      </div>
-
-      <div class="bg-white mt-5 w-full shadow-md rounded p-3 flex flex-col gap-2 min-h-44">
-        <span class="font-semibold text-sm">
-          {{ name }}
+      <div class="flex flex-col w-full gap-2 p-3 mt-5 bg-white rounded shadow-md min-h-52">
+        <span class="text-sm font-semibold">
+          {{ college.name }}
         </span>
 
         <div class="flex flex-row">
           <img src="~/assets/icon/map.svg" alt="map" class="mr-3" />
-          <span class="text-xs text-[#3A5AE3]">Padang, Sumatera Barat</span>
+          <!-- Di harcode karena alamat dari API terlalu panjang -->
+          <span class="text-xs text-[#3A5AE3]">Indonesia</span>
         </div>
 
         <div class="flex flex-row">
@@ -36,27 +41,30 @@
 
         <div class="flex flex-col">
           <span class="text-xs text-[#7E8CA0]">Uang masuk mulai dari</span>
-          <span class="text-sm font-semibold">Rp 350.000</span>
+          <span class="text-sm font-semibold">Rp {{ college.min_registration_fee }}</span>
         </div>
 
-        <button type="button" class="bg-primary text-xs rounded-full text-white w-fit px-4 py-2 flex flex-row items-center gap-2">
-          <img src="~/assets/icon/globe.svg" alt="globe" />
-          Pendaftaran Online
-        </button>
+        <div class="content-end flex-grow w-full">
+          <a :href="college.admission" target="_blank" class="flex flex-row items-center gap-2 px-4 py-2 text-xs text-white rounded-full bg-primary w-fit">
+            <img src="~/assets/icon/globe.svg" alt="globe" />
+            Pendaftaran Online
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
+import { ICollege } from '~/components/home/HomeCollegesRecommendation.vue'
 
 export default defineComponent({
   props: {
-    name: {
-      type: String,
-      default: '',
-    }
+    college: {
+      type: Object as PropType<ICollege>,
+      required: true,
+    },
   }
 })
 </script>
